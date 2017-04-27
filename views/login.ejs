@@ -1,0 +1,92 @@
+<%- include('includes/loginheader') %>
+    <style>
+        h2 {
+            color: #fff;
+            text-align: center;
+        }
+        
+        .modal-header {
+            background-color: #172a4d;
+            color: #fff;
+        }
+    </style>
+
+
+    <div class="jumbotron text-center">
+        <h1>MyOnlineHockey</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><button type="button" class="btn btn-default btn-md" style="width: 30%;" id="myBtn3">Register Now!</button><button type="button" class="btn btn-default btn-md" style="width: 30%;" id="myBtn4">Login</button></div>
+    <!--Register Modal-->
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:35px 50px; background-color: #172a4d;"><button type="button" class="close" data-dismiss="modal">&times;
+        </button>
+                        <h2 style="color: #fff;"><span class="glyphicon glyphicon-pencil" style="color:#fff;"></span>Register</h2>
+                    </div>
+                    <div class="modal-body" style="padding: 40px 50px;">
+                        <form method="POST" action="/users/register">
+                            <div class="form-group"><label for="name">Gamertag</label><input type="text" class="form-control" id="gamertag" name="gamertag" placeholder="Gamertag" value="<%= (!!locals.gamertag)?gamertag:'' %>"></div>
+                            <div class="form-group"><label for="username">Username</label><input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<%= (!!locals.username)?username:'' %>"></div>
+                            <div class="form-group"><label for="password">Password</label><input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<%= (!!locals.password)?password:'' %>"></div>
+                            <div class="form-group"><label for="primaryposition">Primary Position</label><input type="text" class="form-control" id="primaryposition" name="primaryposition" placeholder="Primary Position?" value="<%= (!!locals.primaryposition)?primaryposition:'' %>"></div>
+                            <div class="form-group"><label for="secondarypositions">Secondary Position(s)?</label><input type="text" class="form-control" id="secondarypositions" name="secondarypositions" placeholder="Secondary Positions?" value="<%= (!!locals.secondarypositions)?secondarypositions:'' %>"></div>
+                            <div class="form-group"><input type="submit" class="form-control" name="submit" value="Register" style="background-color: #4caf50; color: #fff;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding: 35px 50px;"><button type="button" class="close" data-dismiss="modal">&
+                        times;
+        </button>
+                        <h2><span class="glyphicon glyphicon-log-in"></span> Login</h2>
+                    </div>
+                    <div class="modal-body" style="padding: 40px 50px;">
+                        <form method="POST" action="/users/login">
+                            <div class="form-group"><label for="username">Username</label><input type="text" class="form-control" id="username" name="username" placeholder="Username"></div>
+                            <div class="form-group"><label for="password">Password</label><input type="password" class="form-control" id="password" name="password" placeholder="Password"></div>
+                            <div class="form-group"><input type="submit" class="form-control" id="submit" name="submit" value="Login" style="background-color: #4caf50; color: #fff;"></div>
+                        </form>
+                        <p style="color:#333;">Haven't Registered? Click <a href=" /users/register ">here</a> .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('includes/footer') %>
+        <script>
+            $(document).ready(function() {
+                    $("#myBtn ").click(function() {
+                        $("#myModal ").modal();
+                    });
+                }
+
+            );
+            $(document).ready(function() {
+                    $("#myBtn2 ").click(function() {
+                        $("#myModal2 ").modal();
+                    });
+                }
+
+            );
+            $(document).ready(function() {
+                    $("#myBtn3 ").click(function() {
+                        $("#myModal ").modal();
+                    });
+                }
+
+            );
+            $(document).ready(function() {
+                    $("#myBtn4 ").click(function() {
+                        $("#myModal2 ").modal();
+                    });
+                }
+
+            );
+        </script>

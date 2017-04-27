@@ -1,0 +1,258 @@
+<%- include('includes/mainheader') %>
+
+
+    <div class="container">
+        <header class="jumbotron text-center">
+            <h1> Welcome
+                <%= user.gamertag %>
+            </h1>
+            <p class="lead">Welcome to Your Locker Room</p>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="page-header text-center">
+                        <h3>Announcements</h3>
+                    </div>
+                    <div class="list-group">
+                        <button type="button" class="list-group-item" id="myBtn1">Getting Started</button>
+                        <button type="button" class="list-group-item" id="myBtn2">Try Out Info</button>
+                        <button type="button" class="list-group-item" id="myBtn3">Contact Coach</button>
+                        <button type="button" class="list-group-item" id="myBtn4">Team Roster</button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="page-header">
+                        <h3>My Player Info</h3>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="/images/skater1.png" alt="avatar">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Season Stats</h4>
+                            <p>Overall Record: (0-0-0)</p>
+                            <p>0 Goals | 0 Assists | 0 Points</p>
+                            <p>Primary Position:
+                                <%= user.primaryposition %>
+                            </p>
+                            <p>Secondary Position(s):
+                                <%= user.secondarypositions %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Beginning of Modals-->
+                <div class="container">
+
+                    <!--Getting Started Modal-->
+                    <div class="modal fade" id="myModal1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="padding: 25px 30px;">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2>Getting Started</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam saepe atque cum omnis, quidem, sit accusamus et assumenda vitae ut. Debitis minima ad incidunt dolor ut temporibus aliquid nobis.</p>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam saepe atque cum omnis, quidem, sit accusamus et assumenda vitae ut. Debitis minima ad incidunt dolor ut temporibus aliquid nobis.</p>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam saepe atque cum omnis, quidem, sit accusamus et assumenda vitae ut. Debitis minima ad incidunt dolor ut temporibus aliquid nobis.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Try Out Info Modal-->
+                    <div class="modal fade" id="myModal2" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="padding: 25px 30px;">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2>Try Out Info</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong><em>Monday, April 24th: </em></strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam saepe atque cum omnis, quidem, sit accusamus et assumenda vitae ut. Debitis minima ad incidunt dolor
+                                        ut temporibus aliquid nobis.</p>
+
+                                    <p><strong><em>Wednesday, April 26th: </em></strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam saepe atque cum omnis, quidem, sit accusamus et assumenda vitae ut. Debitis minima ad incidunt
+                                        dolor ut temporibus aliquid nobis.</p>
+
+                                    <p><strong><em>Friday, April 28th: </em></strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam saepe atque cum omnis, quidem, sit accusamus et assumenda vitae ut. Debitis minima ad incidunt dolor
+                                        ut temporibus aliquid nobis.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Contact Coach Modal-->
+                    <div class="modal fade" id="myModal3" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="padding: 25px 30px;">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2>Contact Coach</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <h1 style="text-align: center">Message To Coach</h1>
+                                        <div style="width: 75%; margin: 25px auto;">
+                                            <form action="/register" method="post">
+                                                <div class="form-group">
+                                                    <label for="gamertag">Enter Your Gamertag</label>
+                                                    <input class="form-control" type="text" name="gamertag" id="gamertag">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message">Enter Your Message</label>
+                                                    <textarea class="form-control" rows="5" id="message" name="message"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button class="btn btn-lg btn-primary btn-block">Send</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--Team Roster Modal-->
+                    <div class="modal fade" id="myModal4" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="padding: 25px 30px;">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2>Team Roster</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Position</th>
+                                                <th>Player</th>
+                                                <th>Shot</th>
+                                                <th>Height</th>
+                                                <th>Weight</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <%= user.primaryposition %>
+                                                </td>
+                                                <td>
+                                                    <%= user.gamertag %>
+                                                </td>
+                                                <td>Right</td>
+                                                <td>6'3"</td>
+                                                <td>210 lbs</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Goalie</td>
+                                                <td>Brick Wall</td>
+                                                <td>Right</td>
+                                                <td>6'7"</td>
+                                                <td>230 lbs</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Right Wing</td>
+                                                <td>Phill Kessel</td>
+                                                <td>Right</td>
+                                                <td>6'0"</td>
+                                                <td>200 lbs</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Right Wing</td>
+                                                <td>Sum Juan </td>
+                                                <td>Left</td>
+                                                <td>5'11"</td>
+                                                <td>190 lbs</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Center</td>
+                                                <td>Barry Macokiner</td>
+                                                <td>Left</td>
+                                                <td>6'3"</td>
+                                                <td>210 lbs</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Defense</td>
+                                                <td>Typical Teal</td>
+                                                <td>Right</td>
+                                                <td>6'6"</td>
+                                                <td>245 lbs</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Defense</td>
+                                                <td>Useless Yellow</td>
+                                                <td>Left</td>
+                                                <td>6'3"</td>
+                                                <td>210 lbs</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Left Wing</td>
+                                                <td>Hitler Clinton</td>
+                                                <td>Left</td>
+                                                <td>6'1"</td>
+                                                <td>205 lbs</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <%- include('includes/footer') %>
+        <script>
+            $(document).ready(function() {
+                $("#myBtn1").click(function() {
+                    $("#myModal1").modal();
+                });
+            });
+
+            $(document).ready(function() {
+                $("#myBtn2").click(function() {
+                    $("#myModal2").modal();
+                });
+            });
+
+            $(document).ready(function() {
+                $("#myBtn3").click(function() {
+                    $("#myModal3").modal();
+                });
+            });
+
+            $(document).ready(function() {
+                $("#myBtn4").click(function() {
+                    $("#myModal4").modal();
+                });
+            });
+        </script>

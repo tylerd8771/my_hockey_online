@@ -1,0 +1,45 @@
+<%- include('includes/loginheader') %>
+
+<div class="container">
+	<div class="row">
+	<h1 style="text-align: center">Register</h1>
+		<div style="width: 30%; margin: 25px auto;">
+
+		<% if (locals.errors) { %>
+			<% errors.forEach(function(error){ %>
+				<div class="alert alert-danger"> <%= error.msg %> </div>
+			<% }) %>
+		<% } %>
+
+		<%- messages() %>
+
+			<form method="POST" action="/users/register">
+				<div class="form-group">
+					<label for="name">Gamertag</label>
+					<input type="text" class="form-control" id="gamertag" name="gamertag" placeholder="Gamertag" value="<%= (!!locals.gamertag)?gamertag:'' %>">
+				</div>
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<%= (!!locals.username)?username:'' %>">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<%= (!!locals.password)?password:'' %>">
+				</div>
+				<div class="form-group">
+					<label for="primaryposition">Primary Position</label>
+					<input type="text" class="form-control" id="primaryposition" name="primaryposition" placeholder="Primary Position?" value="<%= (!!locals.primaryposition)?primaryposition:'' %>">
+				</div>
+                <div class="form-group">
+					<label for="secondarypositions">Secondary Position(s)?</label>
+					<input type="text" class="form-control" id="secondarypositions" name="secondarypositions" placeholder="Secondary Positions?" value="<%= (!!locals.secondarypositions)?secondarypositions:'' %>">
+				</div>
+				<div class="form-group">
+					<input type="submit" class="form-control" name="submit" value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include('includes/footer') %>
