@@ -91,5 +91,6 @@ app.use('/standings', standings);
 
 
 
-app.listen(8080);
-console.log('Server started on port 8080');
+app.listen(process.env.PORT, process.env.IP, function() {
+    console.log('Server started');
+});
