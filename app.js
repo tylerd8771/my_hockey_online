@@ -15,7 +15,7 @@ var standings = require("./routes/standings");
 
 
 var app = express();
-
+var port = process.env.PORT || 8080;
 
 
 // Setting The View Engine
@@ -91,6 +91,5 @@ app.use('/standings', standings);
 
 
 
-app.listen(process.env.PORT, process.env.IP, function() {
-    console.log('Server started');
-});
+app.listen(port)
+console.log('Server running on port ' + port);

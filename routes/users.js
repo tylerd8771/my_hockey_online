@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var mongojs = require("mongojs");
-var db = mongojs("passportapp", ['users']);
+var db = mongojs('mongodb://tyler:password@ds125481.mlab.com:25481/pavhl', ['users']);
 var bcrypt = require("bcryptjs");
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
